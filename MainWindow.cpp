@@ -13,7 +13,13 @@ MainWindow::MainWindow(QWidget *parent): QMainWindow(parent)
     start_label = new QLabel("HelloWorld", this);
     m_layout->addWidget(start_label);
     m_layout->addWidget(button_calcul);
+    QObject::connect(button_calcul, &QPushButton::clicked,this, &MainWindow::update_start_label);
 
+}
+
+
+void MainWindow::update_start_label(){
+    start_label->setText("Ok");
 }
 
 MainWindow::~MainWindow(){

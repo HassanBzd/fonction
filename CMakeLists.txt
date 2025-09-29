@@ -1,16 +1,17 @@
 cmake_minimum_required(VERSION 3.16)
 project(fonction)
+
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-
 find_package(Qt5 REQUIRED COMPONENTS Core Widgets)
 
+set(CMAKE_AUTOMOC ON)
 
 add_executable(fonction
 	main.cpp
-	MainWindow.h
-	MainWindow.cpp)
+	MainWindow.cpp
+	)
 
 target_link_libraries(fonction Qt5::Core Qt5::Widgets)
 
